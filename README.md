@@ -121,3 +121,6 @@ type LongLiveToken struct {
 ```
 
 it represents Long Lived Token from described [here](https://developers.facebook.com/docs/instagram-basic-display-api/guides/long-lived-access-tokens).
+
+## Licence
+This package is licensed under the MIT license. See LICENSE for details.
