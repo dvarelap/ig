@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dvarelap/ig.svg?branch=master)](https://travis-ci.org/dvarelap/ig)
+
 # Instagram Basic Display API in Golang
 
 This is a Go package that fully supports the [Instagram Basic Display API.](https://developers.facebook.com/docs/instagram-basic-display-api/)
