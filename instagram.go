@@ -43,6 +43,21 @@ type Entry struct {
 	Timestamp    string `json:"timestamp"`
 }
 
+func (e *Entry) String() string {
+	return fmt.Sprintf(
+		"%T{ID: %s,Username: %s,Caption: %s,MediaType: %s,MediaURL: %s,Permalink: %s,ThumbnailURL: %s,Timestamp:%s}",
+		e,
+		e.ID,
+		e.Username,
+		e.Caption,
+		e.MediaType,
+		e.MediaURL,
+		e.Permalink,
+		e.ThumbnailURL,
+		e.Timestamp,
+	)
+}
+
 // Tags returns all identified hashtags in caption.
 func (e Entry) Tags() []string {
 	var result []string
@@ -68,11 +83,32 @@ type Profile struct {
 	MediaCount  string `json:"media_count"`
 }
 
+func (p *Profile) String() string {
+	return fmt.Sprintf(
+		"%T{ID: %s, Username: %s, AccountType: %s, MediaCount: %s}",
+		p,
+		p.ID,
+		p.Username,
+		p.AccountType,
+		p.MediaCount,
+	)
+}
+
 // LongLivedToken represents a response for long live token request.
 type LongLiveToken struct {
 	AccessToken string `json:"access_token"`
 	TokenType   string `json:"token_type"`
 	ExpiresIn   int64  `json:"expires_in"`
+}
+
+func (t *LongLiveToken) String() string {
+	return fmt.Sprintf(
+		"%T{AccessToken: %s, TokenType: %s, ExpiresIn: %d}",
+		t,
+		t.AccessToken,
+		t.TokenType,
+		t.ExpiresIn,
+	)
 }
 
 type mediaResp struct {
