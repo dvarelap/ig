@@ -28,7 +28,7 @@ func main() {
 		profile, err = client.GetProfile()
 	)
         
-    checkIfErr(err)
+    	checkIfErr(err)
 
 	fmt.Println("Here's my profile:", profile)
 }
