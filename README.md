@@ -8,7 +8,7 @@ Feel free to create an issue or send me a pull request if you have any "how-to" 
 
 ## Install
 
-Install this package with `go get github.com/huandu/facebook`
+Install this package with `go get github.com/dvarelap/ig`
 
 ## Usage
 
