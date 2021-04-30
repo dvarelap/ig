@@ -31,6 +31,15 @@ func NewClient(accessToken string) *Client {
 	}
 }
 
+// NewClient creates a new client with a given accessToken, clientSecret and http.Client for your proxy.
+func NewProxyClient(accessToken string, c *http.Client) *Client {
+	return &Client{
+		accessToken: accessToken,
+		baseURL:     "https://graph.instagram.com",
+		client:      c,
+	}
+}
+
 // Entry represents an instagram media post.
 type Entry struct {
 	ID           string `json:"id"`
