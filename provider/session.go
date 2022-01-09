@@ -2,7 +2,7 @@ package provider
 
 import (
 	"encoding/json"
-	"github.com/dvarelap/ig"
+	"github.com/dvarelap/ig.git"
 	"github.com/markbates/goth"
 	"github.com/pkg/errors"
 	"strings"
