@@ -3,10 +3,11 @@ package ig
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/pkg/errors"
 	"io/ioutil"
 	"net/http"
 	"strings"
+
+	"github.com/pkg/errors"
 )
 
 const (
@@ -70,6 +71,7 @@ func (e *Entry) String() string {
 // Tags returns all identified hashtags in caption.
 func (e Entry) Tags() []string {
 	var result []string
+
 	arr := strings.Split(e.Caption, " ")
 	for _, s := range arr {
 		if strings.HasPrefix(s, "#") {
@@ -103,7 +105,7 @@ func (p *Profile) String() string {
 	)
 }
 
-// LongLivedToken represents a response for long live token request.
+// LongLiveToken represents a response for long live token request.
 type LongLiveToken struct {
 	AccessToken string `json:"access_token"`
 	TokenType   string `json:"token_type"`
@@ -169,9 +171,10 @@ func (c *Client) LongLivedToken(secret string) (*LongLiveToken, error) {
 		secretParam = fmt.Sprintf("client_secret=%s", secret)
 		url         = buildURL(c.baseURL, "/access_token", c.accessToken, exchangeTokenParam, secretParam)
 		bytes, err  = c.fetch(url)
+
+		token LongLiveToken
 	)
 
-	var token LongLiveToken
 	err = json.Unmarshal(bytes, &token)
 	if err != nil {
 		return nil, errors.Wrap(err, "unable to unmarshal long-live-token")
