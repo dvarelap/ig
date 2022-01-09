@@ -78,6 +78,7 @@ func (e Entry) Tags() []string {
 			}
 		}
 	}
+
 	return result
 }
 
@@ -198,6 +199,7 @@ func (c *Client) fetch(url string) ([]byte, error) {
 
 func buildURL(base, path, token string, extraParams ...string) string {
 	var params string
+
 	if len(extraParams) > 0 {
 		params = fmt.Sprintf("&%s", strings.Join(extraParams, "&"))
 	}
