@@ -23,21 +23,16 @@ type Client struct {
 	baseURL     string
 }
 
+func (c *Client) WithTransport(newClient *http.Client) {
+	c.client = newClient
+}
+
 // NewClient creates a new client with a given accessToken and clientSecret.
 func NewClient(accessToken string) *Client {
 	return &Client{
 		accessToken: accessToken,
 		baseURL:     "https://graph.instagram.com",
 		client:      &http.Client{},
-	}
-}
-
-// NewClient creates a new client with a given accessToken, clientSecret and http.Client for your proxy.
-func NewProxyClient(accessToken string, c *http.Client) *Client {
-	return &Client{
-		accessToken: accessToken,
-		baseURL:     "https://graph.instagram.com",
-		client:      c,
 	}
 }
 
