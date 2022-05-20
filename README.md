@@ -8,7 +8,7 @@ Feel free to create an issue or send me a pull request if you have any "how-to" 
 
 ## Install
 
-Install this package with `go get github.com/dvarelap/ig`
+Install this package with `go get github.com/dvarelap/ig.git`
 
 ## Usage
 
@@ -19,7 +19,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/dvarelap/ig"
+	"github.com/dvarelap/ig.git"
 )
 
 func main() {
@@ -53,7 +53,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/dvarelap/ig"
+	"github.com/dvarelap/ig.git"
 )
 
 func main() {
@@ -95,7 +95,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/dvarelap/ig"
+	"github.com/dvarelap/ig.git"
 )
 
 func main() {

@@ -3,10 +3,12 @@ package provider
 import (
 	"errors"
 	"fmt"
-	"github.com/dvarelap/ig"
+	"net/http"
+
 	"github.com/markbates/goth"
 	"golang.org/x/oauth2"
-	"net/http"
+
+	"github.com/dvarelap/ig.git"
 )
 
 var (

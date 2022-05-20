@@ -2,11 +2,13 @@ package provider
 
 import (
 	"encoding/json"
-	"github.com/dvarelap/ig"
-	"github.com/markbates/goth"
-	"github.com/pkg/errors"
 	"strings"
 	"time"
+
+	"github.com/markbates/goth"
+	"github.com/pkg/errors"
+
+	"github.com/dvarelap/ig.git"
 )
 
 // Session stores data during the auth process with Instagram
@@ -22,6 +24,7 @@ func (s Session) GetAuthURL() (string, error) {
 	if s.AuthURL == "" {
 		return "", errors.New(goth.NoAuthUrlErrorMessage)
 	}
+
 	return s.AuthURL, nil
 }
 
